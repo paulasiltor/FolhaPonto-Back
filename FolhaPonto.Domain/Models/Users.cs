@@ -2,7 +2,7 @@
 
 namespace FolhaPonto.Domain.Models
 {
-    public class Users
+    public class Users : BaseEntity
     {
         [Key]
         public Guid UsersId { get; set; }
@@ -12,11 +12,5 @@ namespace FolhaPonto.Domain.Models
         [Required]
         [StringLength(512)]
         public string Password { get; set; }
-        [Required]
-        public DateTime CreatedAt { get; set; }
-        [Required]
-        public DateTime UpdateAt { get; set; }
-        [Required]
-        public DateTime DeleteAt { get; set; }
     }
 }

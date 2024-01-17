@@ -31,7 +31,7 @@ namespace FolhaPonto.Infra.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DeleteAt")
+                    b.Property<DateTime?>("DeleteAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
@@ -56,7 +56,7 @@ namespace FolhaPonto.Infra.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DeleteAt")
+                    b.Property<DateTime?>("DeleteAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
@@ -81,7 +81,7 @@ namespace FolhaPonto.Infra.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DeleteAt")
+                    b.Property<DateTime?>("DeleteAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
@@ -112,13 +112,13 @@ namespace FolhaPonto.Infra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CollaboratorsId")
+                    b.Property<Guid?>("CollaboratorsId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DeleteAt")
+                    b.Property<DateTime?>("DeleteAt")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("EndDate")
@@ -156,7 +156,7 @@ namespace FolhaPonto.Infra.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DeleteAt")
+                    b.Property<DateTime?>("DeleteAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Password")
@@ -192,9 +192,7 @@ namespace FolhaPonto.Infra.Migrations
                 {
                     b.HasOne("FolhaPonto.Domain.Models.Collaborators", "Collaborators")
                         .WithMany()
-                        .HasForeignKey("CollaboratorsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CollaboratorsId");
 
                     b.HasOne("FolhaPonto.Domain.Models.Tasks", "Tasks")
                         .WithMany()

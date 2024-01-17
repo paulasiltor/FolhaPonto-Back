@@ -2,7 +2,7 @@
 
 namespace FolhaPonto.Domain.Models
 {
-    public class Tasks
+    public class Tasks : BaseEntity
     {
         [Key]
         public Guid TasksId { get; set; }
@@ -14,12 +14,6 @@ namespace FolhaPonto.Domain.Models
         public Projects Projects { get; set; }
         [Required]
         public Guid ProjectsId { get; set; }
-        [Required]
-        public DateTime CreatedAt { get; set; }
-        [Required]
-        public DateTime UpdateAt { get; set; }
-        [Required]
-        public DateTime DeleteAt { get; set; }
 
     }
 }
